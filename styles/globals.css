@@ -1,0 +1,306 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  /* Spotify Color Palette */
+  --spotify-black: #191414;
+  --spotify-dark-gray: #121212;
+  --spotify-green: #1DB954;
+  --spotify-deep-black: #000000;
+  --spotify-white: #FFFFFF;
+  --spotify-light-gray: #B3B3B3;
+  --spotify-bright-green: #1ED760;
+  --spotify-card-gray: #282828;
+  
+  --background: var(--spotify-deep-black);
+  --foreground: var(--spotify-white);
+  --card: var(--spotify-card-gray);
+  --card-foreground: var(--spotify-white);
+  --popover: var(--spotify-card-gray);
+  --popover-foreground: var(--spotify-white);
+  --primary: var(--spotify-green);
+  --primary-foreground: var(--spotify-white);
+  --secondary: var(--spotify-dark-gray);
+  --secondary-foreground: var(--spotify-white);
+  --muted: var(--spotify-card-gray);
+  --muted-foreground: var(--spotify-light-gray);
+  --accent: var(--spotify-green);
+  --accent-foreground: var(--spotify-white);
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: transparent;
+  --input-background: var(--spotify-card-gray);
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--spotify-green);
+  --chart-1: var(--spotify-green);
+  --chart-2: var(--spotify-bright-green);
+  --chart-3: var(--spotify-light-gray);
+  --chart-4: var(--spotify-card-gray);
+  --chart-5: var(--spotify-dark-gray);
+  --radius: 0.5rem;
+  --sidebar: var(--spotify-black);
+  --sidebar-foreground: var(--spotify-white);
+  --sidebar-primary: var(--spotify-green);
+  --sidebar-primary-foreground: var(--spotify-white);
+  --sidebar-accent: var(--spotify-card-gray);
+  --sidebar-accent-foreground: var(--spotify-white);
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: var(--spotify-green);
+}
+
+.dark {
+  --background: var(--spotify-deep-black);
+  --foreground: var(--spotify-white);
+  --card: var(--spotify-card-gray);
+  --card-foreground: var(--spotify-white);
+  --popover: var(--spotify-card-gray);
+  --popover-foreground: var(--spotify-white);
+  --primary: var(--spotify-green);
+  --primary-foreground: var(--spotify-white);
+  --secondary: var(--spotify-dark-gray);
+  --secondary-foreground: var(--spotify-white);
+  --muted: var(--spotify-card-gray);
+  --muted-foreground: var(--spotify-light-gray);
+  --accent: var(--spotify-green);
+  --accent-foreground: var(--spotify-white);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: rgba(255, 255, 255, 0.1);
+  --input: var(--spotify-card-gray);
+  --ring: var(--spotify-green);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: var(--spotify-green);
+  --chart-2: var(--spotify-bright-green);
+  --chart-3: var(--spotify-light-gray);
+  --chart-4: var(--spotify-card-gray);
+  --chart-5: var(--spotify-dark-gray);
+  --sidebar: var(--spotify-black);
+  --sidebar-foreground: var(--spotify-white);
+  --sidebar-primary: var(--spotify-green);
+  --sidebar-primary-foreground: var(--spotify-white);
+  --sidebar-accent: var(--spotify-card-gray);
+  --sidebar-accent-foreground: var(--spotify-white);
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: var(--spotify-green);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Spotify-specific animations and effects */
+@keyframes audioWave {
+  0%, 100% { height: 20px; }
+  50% { height: 40px; }
+}
+
+@keyframes torchFlame {
+  0% { transform: scale(1) rotate(-2deg); }
+  25% { transform: scale(1.1) rotate(1deg); }
+  50% { transform: scale(1.05) rotate(-1deg); }
+  75% { transform: scale(1.08) rotate(0.5deg); }
+  100% { transform: scale(1) rotate(-2deg); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(29, 185, 84, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(29, 185, 84, 0.6); }
+}
+
+@keyframes neonBorderRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.audio-wave {
+  animation: audioWave 1.5s ease-in-out infinite;
+}
+
+.torch-flame {
+  animation: torchFlame 2s ease-in-out infinite;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.spotify-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.neon-text-border {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    #1DB954,
+    #1ED760,
+    #1DB954,
+    #1ED760
+  );
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: neonBorderRotate 6s ease-in-out infinite;
+}
+
+.neon-text-border::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  padding: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #1DB954,
+    transparent,
+    #1ED760,
+    transparent
+  );
+  background-size: 400% 100%;
+  border-radius: 8px;
+  z-index: -1;
+  animation: neonBorderRotate 5s linear infinite;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
+.audio-wave:nth-child(2) { animation-delay: 0.2s; }
+.audio-wave:nth-child(3) { animation-delay: 0.4s; }
+.audio-wave:nth-child(4) { animation-delay: 0.6s; }
+.audio-wave:nth-child(5) { animation-delay: 0.8s; }
